@@ -1,0 +1,65 @@
+[versions]
+agp = "8.5.2"
+android-compileSdk = "35"
+android-minSdk = "28"
+android-targetSdk = "35"
+androidx-activityCompose = "1.10.0"
+androidx-lifecycle = "2.8.4"
+compose-multiplatform = "1.7.1"
+kotlin = "2.1.0"
+kotlinx-coroutines = "1.10.1"
+ktor = "3.0.1"
+ktor-js = "2.3.11"
+koin="4.0.2"
+compose = "1.7.6"
+voyager = "1.1.0-beta02"
+coil = "3.0.4"
+coreKtx = "1.15.0"
+
+[libraries]
+#Coil
+coil-compose = { module = "io.coil-kt.coil3:coil-compose", version.ref = "coil" }
+coil-network-ktor = { module = "io.coil-kt.coil3:coil-network-ktor3", version.ref = "coil" }
+
+#Navigation
+voyager-navigator = { module = "cafe.adriel.voyager:voyager-navigator", version.ref = "voyager" }
+voyager-transitions = { module = "cafe.adriel.voyager:voyager-transitions", version.ref = "voyager" }
+#ktor
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+ktor-client-okhttp = { module = "io.ktor:ktor-client-okhttp", version.ref = "ktor" }
+ktor-client-darwin = { module = "io.ktor:ktor-client-darwin", version.ref = "ktor" }
+ktor-client-cio= {module ="io.ktor:ktor-client-cio", version.ref = "ktor"}
+ktor-client-android = { module = "io.ktor:ktor-client-android", version.ref = "ktor" }
+ktor-client-java = { group = "io.ktor", name = "ktor-client-java", version.ref = "ktor" }
+kotlin-serialization = {module = "io.ktor:ktor-serialization-kotlinx-json", version.ref="ktor"}
+ktor-client-content-negotiation = {module = "io.ktor:ktor-client-content-negotiation", version.ref= "ktor"}
+ktor-client-js = {module = "io.ktor:ktor-client-js", version.ref= "ktor-js"}
+ktor-json = { module = "io.ktor:ktor-client-json", version.ref = "ktor" }
+
+
+
+# DI
+koin-compose = {module="io.insert-koin:koin-compose", version.ref = "koin"}
+
+compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
+compose-ui-tooling-preview = { module = "androidx.compose.ui:ui-tooling-preview", version.ref = "compose" }
+
+androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
+kotlin-reflect= { module = "org.jetbrains.kotlin:kotlin-reflect", version.ref = "kotlin" }
+androidx-lifecycle-viewmodel = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-viewmodel", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-runtime-compose = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "androidx-lifecycle" }
+kotlinx-coroutines-swing = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-swing", version.ref = "kotlinx-coroutines" }
+kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
+#kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinx-coroutines" }
+# = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+
+[bundles]
+ktor = ["ktor-client-core","ktor-json", "ktor-client-content-negotiation"]
+
+[plugins]
+androidApplication = { id = "com.android.application", version.ref = "agp" }
+androidLibrary = { id = "com.android.library", version.ref = "agp" }
+composeMultiplatform = { id = "org.jetbrains.compose", version.ref = "compose-multiplatform" }
+composeCompiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
